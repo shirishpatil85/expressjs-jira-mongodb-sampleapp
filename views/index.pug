@@ -1,0 +1,28 @@
+extends layout
+
+block layout-content
+  div.View
+    h1.Banner JIRA Query Service
+    div.Message
+      div.Title
+        h2 API to query JIRA (/issue/:issueId )
+        form(name="query-issue", method="get", action ="/issue/", onsubmit="this.action = this.action + this.issueId.value; this.submit();")
+          div.input
+            span.label JIRA Issue Id
+            input(type="text", name="issueId")
+          div.actions
+            input(type="submit", value="Search")
+        h2 API for encrypting text (/encrypt/:text )
+        form(name="encrypt-issue", method="get", action ="/encrypt/", onsubmit="this.action = this.action + this.text.value; this.submit();")
+          div.input
+            span.label Encrypt Text
+            input(type="text", name="text")
+          div.actions
+            input(type="submit", value="Encrypt")
+        h2 API for keyword search (/search/:keyword )
+        form(name="search-issues", method="get", action ="/search/", onsubmit="this.action = this.action + this.keyword.value; this.submit();")
+          div.input
+            span.label Keyword Search
+            input(type="text", name="keyword")
+          div.actions
+            input(type="submit", value="Keyword Search")
